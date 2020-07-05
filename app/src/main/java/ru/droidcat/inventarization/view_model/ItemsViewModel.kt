@@ -17,6 +17,8 @@ class ItemsViewModel(application: Application): AndroidViewModel(application) {
     private val repository: ItemsRepository = ItemsRepository(itemDAO)
     val items: LiveData<List<Item>> = repository.items
 
+    fun getItem(item_id: String) = repository.getItem(item_id)
+
     fun insert(name: String) = viewModelScope.launch {
         val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss:SSS", Locale.ENGLISH)
         val currentDate = sdf.format(Date())
@@ -28,6 +30,10 @@ class ItemsViewModel(application: Application): AndroidViewModel(application) {
         val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss:SSS", Locale.ENGLISH)
         val currentDate = sdf.format(Date())
         val item = Item(currentDate, name, count, "")
+        repository.insertItem(item)
+    }
+
+    fun insert(item: Item) = viewModelScope.launch {
         repository.insertItem(item)
     }
 

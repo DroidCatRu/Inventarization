@@ -9,6 +9,10 @@
             type="ru.droidcat.inventarization.database.Item" />
 
         <variable
+            name="image"
+            type="android.view.View"/>
+
+        <variable
             name="clickListener"
             type="ru.droidcat.inventarization.view_model.ItemListener" />
     </data>
@@ -17,24 +21,28 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/color_surface"
-        android:id="@+id/container">
-        <!--android:onClick="@{() -> clickListener.onClick(project)}">-->
+        android:id="@+id/start_container"
+        android:onClick="@{() -> clickListener.onClick(item, image)}">
 
         <ImageView
-            android:id="@+id/list_item_icon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:id="@+id/start_item_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginStart="16dp"
             android:contentDescription="Project icon"
             android:src="@drawable/item"
+            android:padding="4dp"
+            android:background="@drawable/item_icon_shape"
+            android:backgroundTint="@color/primary_100"
             android:tint="?attr/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/list_item_name"
+            app:layout_constraintEnd_toStartOf="@+id/start_item_name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:transitionName="@{@string/itemImageTransition(item.item_id)}"/>
 
         <TextView
-            android:id="@+id/list_item_name"
+            android:id="@+id/start_item_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -42,9 +50,9 @@
             android:textAppearance="@style/TextAppearance.Inventarization.Subtitle2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/list_item_count"
-            app:layout_constraintStart_toEndOf="@id/list_item_icon"
+            app:layout_constraintStart_toEndOf="@id/start_item_image"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Project name" />
+            tools:text="Item name" />
 
         <TextView
             android:id="@+id/list_item_count"
@@ -56,7 +64,7 @@
             android:textAppearance="@style/TextAppearance.Inventarization.Caption"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/list_item_name"
+            app:layout_constraintStart_toEndOf="@id/start_item_name"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="12" />
 

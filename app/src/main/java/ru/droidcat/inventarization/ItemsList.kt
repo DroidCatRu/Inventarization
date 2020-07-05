@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ru.droidcat.inventarization.database.Item
 import ru.droidcat.inventarization.view_model.ItemListener
 import ru.droidcat.inventarization.view_model.ItemsListAdapter
 import ru.droidcat.inventarization.view_model.ItemsViewModel
@@ -17,9 +18,8 @@ import ru.droidcat.inventarization.view_model.ItemsViewModel
 class ItemsList: Fragment() {
 
     private lateinit var itemsViewModel: ItemsViewModel
-    lateinit var recyclerView: RecyclerView
-    lateinit var adapter: ItemsListAdapter
-    lateinit var onItemCallback: OnItemCallback
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: ItemsListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,8 +27,6 @@ class ItemsList: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.items_list, container, false)
-
-        //onItemCallback = arguments.get("onItemCallback") as OnItemCallback
 
         recyclerView = view.findViewById(R.id.items_list)
         adapter = ItemsListAdapter(itemListener)
@@ -39,19 +37,21 @@ class ItemsList: Fragment() {
 
         itemsViewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
         itemsViewModel.items.observe(viewLifecycleOwner, Observer { items ->
-            items?.let { adapter.setItems(it) }
+            items?.let { adapter.submitList(it) }
         })
 
         adapter.setViewModel(itemsViewModel)
 
+        //exitTransition = Hold()
+
         return view
     }
 
-    private val itemListener = ItemListener { item ->
-        //onItemCallback?.onClick(item)
+    private val itemListener = ItemListener { item, image ->
+        val extras = FragmentNavigatorExtras(image to image.transitionName)
+        val bundle = Bundle()
+        bundle.putString("item_id", item.item_id)
+        bundle.putString("image", image.transitionName)
+        findNavController().navigate(R.id.action_itemsList_to_itemView, bundle, null, extras)
     }
-}
-
-class OnItemCallback(val clickListener: (item: Item) -> Unit) {
-    fun onClick(item: Item) = clickListener(item)
 }

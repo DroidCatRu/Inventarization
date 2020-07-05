@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="@integer/transition_time">
+    <changeBounds/>
+    <arcMotion android:minimumHorizontalAngle="35"
+        android:minimumVerticalAngle="40"
+        android:maximumAngle="70" />
+    <changeTransform/>
+    <changeClipBounds/>
+    <changeImageTransform/>
+</transitionSet>

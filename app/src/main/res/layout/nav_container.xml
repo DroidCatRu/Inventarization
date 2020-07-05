@@ -34,8 +34,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:title=" "/>
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextSwitcher
                     android:id="@+id/toolbar_title"
@@ -82,7 +81,7 @@
             app:navGraph="@navigation/main_graph" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_project_button"
+            android:id="@+id/add_item_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

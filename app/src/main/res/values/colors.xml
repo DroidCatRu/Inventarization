@@ -21,6 +21,7 @@
     <color name="system_ui_scrim_light">#B3FAFAFA</color> <!-- 70% white -->
     <color name="system_ui_scrim_black">#40000000</color> <!-- 25% black -->
 
+    <color name="camera_scrim">#67000000</color>
     <!-- We use a dark scrim by default since light status is API 23+ -->
     <color name="status_bar_scrim">@color/system_ui_scrim_black</color>
     <!-- We use a dark scrim by default since light nav bar is API 27+ -->

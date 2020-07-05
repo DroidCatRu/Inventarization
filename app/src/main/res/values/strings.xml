@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Inventarization</string>
+    <string name="items_screen_title">Items</string>
+    <string name="itemImageTransition">image %s</string>
+    <string name="itemNameTransition">name %s</string>
+    <string name="itemLayoutTransition">layout %s</string>
+    <string name="item_view_title">Item description</string>
 </resources>

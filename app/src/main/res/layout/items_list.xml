@@ -10,9 +10,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/items_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:listitem="@layout/items_list_item"
-        android:paddingBottom="96dp"
+        android:paddingBottom="72dp"
         android:clipToPadding="false"
         android:overScrollMode="never" />
 

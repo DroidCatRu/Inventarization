@@ -11,6 +11,9 @@ interface ItemDAO {
     @Query("SELECT * FROM items_table ORDER BY NOT(item_count = 0), LOWER(item_name), item_id ASC")
     fun getAllItems(): LiveData<List<Item>>
 
+    @Query("SELECT * FROM items_table WHERE item_id = :item_id")
+    fun getItem(item_id: String): LiveData<Item>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(item: Item)
 

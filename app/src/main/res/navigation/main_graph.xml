@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph.xml"
     app:startDestination="@id/itemsList">
 
     <fragment
         android:id="@+id/itemsList"
         android:name="ru.droidcat.inventarization.ItemsList"
-        android:label="ItemsList" />
+        android:label="ItemsList"
+        tools:layout="@layout/items_list">
+        <action
+            android:id="@+id/action_itemsList_to_itemView"
+            app:destination="@id/itemView"
+            app:enterAnim="@anim/in_from_bottom"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/out_to_bottom" />
+        <action
+            android:id="@+id/action_itemsList_to_addItem"
+            app:destination="@id/addItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemView"
+        android:name="ru.droidcat.inventarization.ItemView"
+        android:label="ItemView"
+        tools:layout="@layout/item_view">
+    </fragment>
+    <fragment
+        android:id="@+id/addItem"
+        android:name="ru.droidcat.inventarization.AddItem"
+        android:label="AddItem"
+        tools:layout="@layout/add_item_view"/>
 </navigation>
