@@ -8,6 +8,10 @@
             name="item"
             type="ru.droidcat.inventarization.database.Item" />
 
+        <variable
+            name="codeBitmap"
+            type="android.graphics.Bitmap" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +19,7 @@
         android:layout_height="match_parent"
         android:padding="8dp">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -24,13 +28,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:cardCornerRadius="16dp"
-            app:cardPreventCornerOverlap="false"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/color_control_light"
+            app:cardBackgroundColor="@color/secondary_900"
             app:cardElevation="0dp">
 
             <androidx.camera.view.PreviewView
                 android:id="@+id/view_finder"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -51,24 +58,99 @@
                     app:layout_constraintTop_toTopOf="parent"
                     android:textColor="@color/secondary_50"
                     android:textAppearance="@style/TextAppearance.Inventarization.Subtitle1"
-                    android:text="Scan barcode or QR code"/>
+                    android:text="@string/scanner_help_text"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/code_viewer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/secondary_50"
+                android:padding="16dp"
+                android:visibility="invisible"
+                android:contentDescription="@string/code_viewer_content_description"/>
 
-        <TextView
-            android:id="@+id/item_id"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/add_item_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card"
-            android:textAppearance="@style/TextAppearance.Inventarization.Headline6"
-            android:text="@{item.item_id}"
-            tools:text="Item id: 2352572"/>
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/item_id_textinputlayout"
+                android:hint="@string/item_id_input_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/item_id_textinputedittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="@{item.item_id}"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.Inventarization.Subtitle1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/item_name_textinputlayout"
+                android:hint="@string/item_name_input_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/item_name_textinputedittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="@{item.item_name}"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.Inventarization.Subtitle1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/item_count_textinputlayout"
+                android:hint="@string/item_quantity_input_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/item_count_textinputedittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    app:itemCount="@{item}"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.Inventarization.Subtitle1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_item_button"
+            android:text="@string/add_item_button_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

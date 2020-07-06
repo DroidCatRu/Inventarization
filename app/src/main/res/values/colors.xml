@@ -2,7 +2,7 @@
 <resources>
 
     <color name="color_primary">@color/primary_400</color>
-    <color name="color_primary_dark">@color/primary_700</color>
+    <color name="color_primary_dark">@color/primary_500</color>
     <color name="color_on_primary">@color/secondary_50</color>
 
     <color name="project_hovered">@android:color/transparent</color>

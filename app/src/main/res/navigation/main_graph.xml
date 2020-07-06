@@ -19,7 +19,11 @@
             app:popExitAnim="@anim/out_to_bottom" />
         <action
             android:id="@+id/action_itemsList_to_addItem"
-            app:destination="@id/addItem" />
+            app:destination="@id/addItem"
+            app:enterAnim="@anim/in_from_bottom"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/out_to_bottom" />
     </fragment>
     <fragment
         android:id="@+id/itemView"

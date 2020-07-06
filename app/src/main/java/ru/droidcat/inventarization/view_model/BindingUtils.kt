@@ -1,5 +1,7 @@
 package ru.droidcat.inventarization.view_model
 
+import android.graphics.Bitmap
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import ru.droidcat.inventarization.database.Item

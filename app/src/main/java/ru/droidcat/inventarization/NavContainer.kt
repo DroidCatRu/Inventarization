@@ -57,7 +57,7 @@ class NavContainer : AppCompatActivity() {
 
     fun addItemDialog(view: View?) {
         //itemsViewModel.insert("New item")
-        navController.navigate(R.id.addItem)
+        navController.navigate(R.id.action_itemsList_to_addItem)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
