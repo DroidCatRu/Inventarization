@@ -130,6 +130,9 @@ class AddItem: Fragment(), ActivityCompat.OnRequestPermissionsResultCallback {
             preview = Preview.Builder()
                 .build()
 
+            val width = card.width
+            val height = card.height
+
             imageAnalyzer = ImageAnalysis.Builder()
                 .build()
                 .also {
@@ -143,7 +146,7 @@ class AddItem: Fragment(), ActivityCompat.OnRequestPermissionsResultCallback {
                             binding.executePendingBindings()
                             itemsViewModel.insert(item)
                         }
-                    }, detector!!))
+                    }, detector!!, width, height))
                 }
 
             // Select back camera
@@ -177,7 +180,11 @@ class AddItem: Fragment(), ActivityCompat.OnRequestPermissionsResultCallback {
 
 }
 
-private class BarcodeAnalyzer(private val listener: BarcodeListener, private val detector: BarcodeDetector) : ImageAnalysis.Analyzer {
+private class BarcodeAnalyzer(
+    private val listener: BarcodeListener,
+    private val detector: BarcodeDetector,
+    private val width: Int,
+    private val height: Int) : ImageAnalysis.Analyzer {
 
     private fun ByteBuffer.toByteArray(): ByteArray {
         rewind()    // Rewind the buffer to zero
@@ -197,6 +204,7 @@ private class BarcodeAnalyzer(private val listener: BarcodeListener, private val
             val data = nv21toJPEG(yuv420toNV21(image.image!!)!!, image.width, image.height, 100)
             val bmp = BitmapFactory.decodeByteArray(data, 0, data!!.size)
 
+            Log.d("Card", "$width * $height")
             Log.d("Image", "${image.width} * ${image.height}")
             Log.d("Bitmap", "${bmp.width} * ${bmp.height}")
 
@@ -206,9 +214,10 @@ private class BarcodeAnalyzer(private val listener: BarcodeListener, private val
             bmp.height, matrix, true)
 
             if(bitmapPicture != null) {
+                val aspectRatio = height.toFloat() / width.toFloat()
                 val yOffset =
-                    ((bitmapPicture.height.toFloat() - (bitmapPicture.width.toFloat() / 2)) / 2).roundToInt()
-                val yHeight = (bitmapPicture.width.toFloat() / 2).roundToInt()
+                    ((bitmapPicture.height.toFloat() - (bitmapPicture.width.toFloat() * aspectRatio)) / 2).roundToInt()
+                val yHeight = (bitmapPicture.width.toFloat() * aspectRatio).roundToInt()
                 val croppedBitmap =
                     Bitmap.createBitmap(bitmapPicture, 0, yOffset, bitmapPicture.width, yHeight)
                 val frame = Frame.Builder().setBitmap(croppedBitmap).build()

@@ -29,6 +29,8 @@ class ItemView: Fragment() {
         binding.image = arguments?.getString("image")
         binding.executePendingBindings()
 
+
+
         itemsViewModel = ViewModelProvider(this).get(ItemsViewModel::class.java)
 
         return binding.root
