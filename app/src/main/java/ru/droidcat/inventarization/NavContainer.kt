@@ -45,6 +45,10 @@ class NavContainer : AppCompatActivity() {
                     binding.title = getString(R.string.item_view_title)
                     add_item_button.hide()
                 }
+                R.id.addItem -> {
+                    binding.title = getString(R.string.add_item_title)
+                    add_item_button.hide()
+                }
                 else -> {
                     binding.title = getString(R.string.app_name)
                     add_item_button.hide()

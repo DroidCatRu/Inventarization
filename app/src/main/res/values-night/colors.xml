@@ -5,6 +5,8 @@
     <color name="color_primary_dark">@color/primary_400</color>
     <color name="color_on_primary">@color/secondary_900</color>
 
+    <color name="color_warn">@color/red_200</color>
+
     <color name="project_hovered">#1fFFFFFF</color>
     <color name="color_on_secondary">#000</color>
     <color name="color_ripple">#1fb895ff</color>

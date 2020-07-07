@@ -87,7 +87,9 @@ class AddItem: Fragment(), ActivityCompat.OnRequestPermissionsResultCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        item_count_textinputlayout.editText?.setText("0")
+
+        item_count_textinputedittext.append("0")
+
         item_id_textinputedittext.doAfterTextChanged {
             item_id_textinputlayout.error = null
             item.item_id = item_id_textinputlayout.editText?.text.toString()

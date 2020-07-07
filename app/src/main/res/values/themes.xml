@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/color_on_secondary</item>
         <item name="colorControlLight">@color/color_on_surface</item>
         <item name="colorControlNormal">@color/color_on_surface</item>
+        <item name="android:textColorHighlight">@color/ripple_color_selector</item>
         <item name="colorOnSurface">@color/color_on_surface</item>
         <item name="android:colorBackground">@color/color_surface</item>
         <item name="colorOnBackground">@color/color_on_surface</item>

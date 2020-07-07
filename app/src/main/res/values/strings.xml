@@ -11,4 +11,7 @@
     <string name="item_name_input_hint">Item name</string>
     <string name="add_item_button_text">Add item</string>
     <string name="item_quantity_input_hint">Item quantity</string>
+    <string name="edit_item_button_text">Edit item</string>
+    <string name="delete_item_button_text">Delete item</string>
+    <string name="add_item_title">Add item</string>
 </resources>

@@ -5,6 +5,8 @@
     <color name="color_primary_dark">@color/primary_500</color>
     <color name="color_on_primary">@color/secondary_50</color>
 
+    <color name="color_warn">@color/red_400</color>
+
     <color name="project_hovered">@android:color/transparent</color>
     <color name="color_on_secondary">#fff</color>
     <color name="color_ripple">#888C52FF</color>
@@ -31,6 +33,8 @@
     <color name="light_grey">#e6e6e6</color>
     <color name="scrim">#33000000</color> <!-- 20% black -->
 
+    <color name="red_400">#FF5252</color>
+    <color name="red_200">#F99C9D</color>
 
     <color name="primary_900">#0002da</color>
     <color name="primary_800">#3b15e9</color>

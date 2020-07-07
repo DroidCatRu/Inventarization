@@ -1,5 +1,22 @@
 <resources>
 
+    <style name="BottomSheetDialogTheme" parent="ModalBottomSheetDialog">
+        <item name="android:navigationBarColor">@color/color_surface</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="ModalBottomSheet" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="behavior_hideable">true</item>
+        <item name="behavior_draggable">true</item>
+        <item name="behavior_fitToContents">true</item>
+        <item name="backgroundTint">@color/color_surface</item>
+    </style>
+
+    <style name="ModalBottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ModalBottomSheet</item>
+    </style>
+
     <style name="FloatingActionButton" parent="Widget.Design.FloatingActionButton">
         <item name="backgroundTint">?attr/colorPrimary</item>
         <item name="rippleColor">@color/color_ripple_on_primary</item>
