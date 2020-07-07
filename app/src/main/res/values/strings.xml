@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Inventarization</string>
+    <string name="items_screen_title">Items</string>
+    <string name="itemImageTransition">image %s</string>
+    <string name="itemNameTransition">name %s</string>
+    <string name="itemLayoutTransition">layout %s</string>
+    <string name="item_view_title">Item description</string>
+    <string name="scanner_help_text">Tap to scan barcode or QR code</string>
+    <string name="item_id_input_hint">Item id</string>
+    <string name="code_viewer_content_description">Code viewer</string>
+    <string name="item_name_input_hint">Item name</string>
+    <string name="add_item_button_text">Add item</string>
+    <string name="item_quantity_input_hint">Item quantity</string>
+    <string name="edit_item_button_text">Edit item</string>
+    <string name="delete_item_button_text">Delete item</string>
+    <string name="add_item_title">Add item</string>
+</resources>

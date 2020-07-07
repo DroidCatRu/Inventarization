@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_primary">@color/primary_200</color>
+    <color name="color_primary_dark">@color/primary_400</color>
+    <color name="color_on_primary">@color/secondary_900</color>
+
+    <color name="color_warn">@color/red_200</color>
+
+    <color name="project_hovered">#1fFFFFFF</color>
+    <color name="color_on_secondary">#000</color>
+    <color name="color_ripple">#1fb895ff</color>
+    <color name="color_ripple_on_primary">#52000000</color>
+
+    <color name="color_control_light">#99FFFFFF</color>
+    <color name="color_on_surface">@color/secondary_50</color>
+    <color name="color_surface">@color/secondary_900</color>
+
+    <!-- Scrim colors -->
+    <color name="system_ui_scrim_light">#2EFFFFFF</color> <!-- 18% white -->
+    <color name="system_ui_scrim_black">#B3000000</color> <!-- 70% black -->
+
+    <!-- In dark mode without light status bar we can use transparent -->
+    <color name="status_bar_scrim">#0fff</color>
+
+    <color name="nav_bar_scrim">#ff292334</color>
+
+    <!-- Other colors with light mode alternatives -->
+    <color name="list_divider">#1fffffff</color>
+
+    <color name="secondary_900">#181125</color>
+    <color name="secondary_800">#383147</color>
+    <color name="secondary_700">#574e66</color>
+    <color name="secondary_600">#6a617a</color>
+    <color name="secondary_500">#9389a3</color>
+    <color name="secondary_400">#b4a9c4</color>
+    <color name="secondary_300">#d8ceea</color>
+    <color name="secondary_200">#eadffc</color>
+    <color name="secondary_100">#f5eaff</color>
+    <color name="secondary_50">#FFFFFF</color>
+
+</resources>

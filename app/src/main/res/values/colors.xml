@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_primary">@color/primary_400</color>
+    <color name="color_primary_dark">@color/primary_500</color>
+    <color name="color_on_primary">@color/secondary_50</color>
+
+    <color name="color_warn">@color/red_400</color>
+
+    <color name="project_hovered">@android:color/transparent</color>
+    <color name="color_on_secondary">#fff</color>
+    <color name="color_ripple">#888C52FF</color>
+    <color name="color_ripple_on_primary">@color/primary_600</color>
+    <color name="color_on_surface">@color/secondary_900</color>
+    <color name="color_surface">@color/secondary_50</color>
+    <color name="color_on_surface_medium">@color/secondary_500</color>
+
+    <color name="color_bottom_sheet">@color/color_surface</color>
+
+    <color name="color_control_light">#99000000</color>
+
+    <!-- Scrim colors -->
+    <color name="system_ui_scrim_light">#B3FAFAFA</color> <!-- 70% white -->
+    <color name="system_ui_scrim_black">#40000000</color> <!-- 25% black -->
+
+    <color name="camera_scrim">#67000000</color>
+    <!-- We use a dark scrim by default since light status is API 23+ -->
+    <color name="status_bar_scrim">@color/system_ui_scrim_black</color>
+    <!-- We use a dark scrim by default since light nav bar is API 27+ -->
+    <color name="nav_bar_scrim">@color/system_ui_scrim_black</color>
+
+    <color name="list_divider">#1f000000</color>>
+    <color name="light_grey">#e6e6e6</color>
+    <color name="scrim">#33000000</color> <!-- 20% black -->
+
+    <color name="red_400">#FF5252</color>
+    <color name="red_200">#F99C9D</color>
+
+    <color name="primary_900">#0002da</color>
+    <color name="primary_800">#3b15e9</color>
+    <color name="primary_700">#511dee</color>
+    <color name="primary_600">#6527F6</color>
+    <color name="primary_500">#722CFD</color>
+    <color name="primary_400">#8C52FF</color>
+    <color name="primary_300">#A374FF</color>
+    <color name="primary_200">#BF9FFF</color>
+    <color name="primary_100">#D9C6FE</color>
+    <color name="primary_50">#F1E8FF</color>
+
+    <color name="secondary_900">#222222</color>
+    <color name="secondary_800">#434343</color>
+    <color name="secondary_700">#636363</color>
+    <color name="secondary_600">#777777</color>
+    <color name="secondary_500">#A0A0A0</color>
+    <color name="secondary_400">#BFBFBF</color>
+    <color name="secondary_300">#E1E1E1</color>
+    <color name="secondary_200">#EFEFEF</color>
+    <color name="secondary_100">#F5F5F5</color>
+    <color name="secondary_50">#FFFFFF</color>
+
+</resources>
